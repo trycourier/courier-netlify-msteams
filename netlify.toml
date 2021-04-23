@@ -1,0 +1,12 @@
+[[redirects]]
+  from = "/api/messages"
+  to = "/.netlify/functions/messages"
+  status = 200
+
+[functions]
+  node_bundler = "esbuild"
+
+[template.environment]
+  COURIER_AUTH_TOKEN = "Courier auth token (required)"
+  MSTEAMS_APP_ID = "Microsoft Teams App ID (required)"
+  MSTEAMS_APP_SECRET = "Microsoft Teams App Secret (required)"
