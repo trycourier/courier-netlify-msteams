@@ -1,8 +1,12 @@
-import { TurnContext, MessageFactory, TeamsActivityHandler } from "botbuilder";
-import { CourierClient } from "@trycourier/courier";
+const {
+  TurnContext,
+  MessageFactory,
+  TeamsActivityHandler
+} = require("botbuilder");
+const { CourierClient } = require("@trycourier/courier");
 const courier = CourierClient();
 
-export class BotActivityHandler extends TeamsActivityHandler {
+class BotActivityHandler extends TeamsActivityHandler {
   constructor() {
     super();
     /*  Teams bots are Microsoft Bot Framework bots.
@@ -108,3 +112,5 @@ export class BotActivityHandler extends TeamsActivityHandler {
     await context.sendActivity(replyActivity);
   }
 }
+
+module.exports.BotActivityHandler = BotActivityHandler;

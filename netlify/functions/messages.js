@@ -1,5 +1,5 @@
-import { BotFrameworkAdapter } from "botbuilder";
-import { BotActivityHandler } from "../lib/botActivityHandler";
+const { BotFrameworkAdapter } = require("botbuilder");
+const { BotActivityHandler } = require("../lib/botActivityHandler");
 
 const adapter = new BotFrameworkAdapter({
   appId: process.env.MSTEAMS_APP_ID,
@@ -29,7 +29,7 @@ adapter.onTurnError = async (context, error) => {
 
 const botActivityHandler = new BotActivityHandler();
 
-export function handler(event, context, callback) {
+exports.handler = function (event, context, callback) {
   const req = {
     body: JSON.parse(event.body),
     headers: event.headers
@@ -60,6 +60,7 @@ export function handler(event, context, callback) {
   };
 
   adapter.processActivity(req, res, async (context) => {
+    // Process bot activity
     await botActivityHandler.run(context);
   });
-}
+};
