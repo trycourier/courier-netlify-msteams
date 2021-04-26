@@ -3,7 +3,7 @@ const { BotActivityHandler } = require("../lib/botActivityHandler");
 
 const adapter = new BotFrameworkAdapter({
   appId: process.env.MSTEAMS_APP_ID,
-  appPassword: process.env.MSTEAMS_APP_SECRET
+  appPassword: process.env.MSTEAMS_APP_PASSWORD
 });
 
 adapter.onTurnError = async (context, error) => {
