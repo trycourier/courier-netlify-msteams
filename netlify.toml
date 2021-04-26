@@ -6,4 +6,4 @@
 [template.environment]
   COURIER_AUTH_TOKEN = "Courier auth token (required)"
   MSTEAMS_APP_ID = "Microsoft Teams App ID (required)"
-  MSTEAMS_APP_SECRET = "Microsoft Teams App Secret (required)"
+  MSTEAMS_APP_PASSWORD = "Microsoft Teams App Password (required)"
