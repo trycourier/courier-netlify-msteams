@@ -12,6 +12,8 @@ class BotActivityHandler extends TeamsActivityHandler {
       const text = context.activity.text.trim().toLocaleLowerCase();
       if (text.includes("add-user") || text.includes("add-channel")) {
         await this.updateCourierProfile(context);
+      } else if (text === "test") {
+        await context.sendActivity(`Your bot has been successfully added.`);
       }
 
       await next();
