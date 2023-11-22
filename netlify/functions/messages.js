@@ -45,8 +45,8 @@ exports.handler = function (event, context, callback) {
   };
 
   const res = {
-    send: function (status, body) {
-      _respond(status, body);
+    send: function (body) {
+      _body = JSON.stringify(body);
     },
     status: function (status) {
       _status = status;
